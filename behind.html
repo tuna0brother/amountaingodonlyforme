@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비하인드컷</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&family=Noto+Serif:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        html {font-size: 10px;
+            font-family: 'Noto Serif KR', serif;
+            font-weight: 400;
+        }
+        body {
+            margin: 0px;
+        }
+        #main {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            position: relative;
+            justify-content: center;
+
+            background-image: url("pic/book.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        @font-face {
+            font-family: 'SimSun';
+            src: url(font/simsun.ttc);
+        }
+        .리 {
+            font-size: 10rem;
+            font-family: 'SimSun';
+
+            display: flex;
+            justify-content: center;;
+        }
+        .리 a {
+            color: black;
+            text-decoration: none;
+            text-shadow: 1.2px 1.2px gray;
+        } 
+        .guide {
+            position: absolute;
+            top: 2.5vw;
+            right: 2.5vw;
+        }
+        .tap {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            
+            font-size: 2rem;
+            color: black;
+            font-family: 'Noto serif';
+            font-weight: 400;
+
+            margin: 1.2vw 0px;
+        }
+
+
+        #틀 {
+            margin: 7.5vw 0vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .pic {
+            margin: 0vw 1.75vw;
+            width: 70vw;
+            height: 40vw;
+            position: relative;
+        }
+        div#fir img {
+            width: 100%;
+            
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        div#fir img.alt{
+            display: none;
+        }
+        .버튼 {
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+            background-color: rgba(255,255,255,0);
+
+            width: 7.5vw;
+            height: 7.5vw;
+            cursor: pointer;
+        }
+        button img {
+            width: 100%;
+        }
+        
+
+        @media (max-width: 768px) {
+            html{font-size: 5.5px;}
+        }
+        @media (min-width: 769px) and (max-width: 1280px){
+            html{font-size: 7px;}
+        }
+        @media (min-width: 1281px) and (max-width: 1920px){
+            html{font-size: 8.5px;}
+        }
+
+    </style>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>   
+    <script>
+        $('#틀').ready(function(){
+            var box = $('div#fir');
+            $('<img>').attr('src', 'pic/1699407927142.jpg');
+            $('<img>').attr('src', 'pic/1699407927576.jpg');
+
+            $('.버튼#left').click(function(){
+                var imgs = box.find('img')
+                var first = imgs.eq(0);
+                var last = imgs.eq(2);
+                first.fadeOut();
+                last.prependTo(box).fadeIn();
+            });
+            $('.버튼#right').click(function(){
+                var imgs = box.find('img');
+                var first = imgs.eq(0);
+                var second = imgs.eq(1);
+                first.fadeOut().appendTo(box);
+                second.fadeIn();
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div id="main">
+        <div class="guide">
+            <div class="리"><a href="index.html">离</a></div>
+            <a href="story.html" class="tap">Story</a>
+            <a href="concept.html" class="tap">Concept</a>
+            <a href="behind.html" class="tap">Behind</a>
+            <a href="connection.html" class="tap">Connection</a>
+        </div>
+        <div id="틀">
+            <button class='버튼' id="left"><img src="pic/left.png"></button>
+            <div class="pic" id="fir">
+                <img src="pic/1699407927033.jpg">
+                <img src="pic/1699407927142.jpg" class="alt">
+                <img src="pic/1699407927576.jpg" class="alt">
+            </div>
+            <button class='버튼' id="right"><img src="pic/right.png"></button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>concept</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&family=Noto+Serif:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        html {font-size: 10px;
+            font-family: 'Noto Serif KR', serif;
+            font-weight: 400;
+        }
+        body {
+            margin: 0;
+
+            overflow: hidden;
+        }
+        #wrap {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+
+            background-image: url("pic/book.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;            
+        }
+        #main {
+            width: 95vw;
+            height: 56vw;
+            display: flex;
+            position: relative;
+            
+            padding: 0px 2vw;
+        }
+
+        @font-face {
+            font-family: 'SimSun';
+            src: url(font/simsun.ttc);
+        }
+        .리 {
+            font-size: 10rem;
+            font-family: 'SimSun';
+
+            display: flex;
+            justify-content: center;;
+        }
+        .리 a {
+            color: black;
+            text-decoration: none;
+            text-shadow: 1.2px 1.2px gray;
+        } 
+        .guide {
+            position: absolute;
+            top: 2.5vw;
+            right: 2.5vw;
+        }
+        .tap {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            
+            font-size: 2rem;
+            color: black;
+            font-family: 'Noto serif';
+            font-weight: 400;
+
+            margin: 1.2vw 0px;
+        }
+        #first {
+            width: 50vw;
+            padding-top: 7vw;
+            padding-right: 2vw;
+            padding-bottom: 1.85vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        #second {
+            width: 40vw;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+        }
+        img {
+            width: 35vw;
+        }
+        .text {
+            width: 100%;
+            font-size: 2.2rem;
+            text-align: center;
+            margin-top: 2.5vw;
+            margin-bottom: 2.5vw;
+        }
+        #buttons {
+            width: 50vw;
+            display: flex;
+            justify-content: space-between;
+        }
+        .concept {
+            width: 10vw;
+            height: 10vw;
+            border: 0px;
+            border-radius:0.5rem 3rem 0.5rem 0.5rem;
+            background-color: rgba(255,255, 255, 0.3);
+            
+            font-size: 1.5rem;
+            color: rgba(0, 0, 0, 0.5);
+            font-weight: bolder;
+
+            cursor: pointer;
+        }
+        #imgbox {
+            position: relative;
+            width: 36vw;
+            height: 55vw;
+        }
+        img {
+            position: absolute;
+            top: 1.15vw;
+            left: 0vw;
+        }
+        .turnoff {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            html{font-size: 5.5px;}
+        }
+        @media (min-width: 769px) and (max-width: 1280px){
+            html{font-size: 7px;}
+        }
+        @media (min-width: 1281px) and (max-width: 1920px){
+            html{font-size: 8.5px;}
+        }
+
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function(){
+            var buttons = $('#buttons').find('button');
+            var firbtn = buttons.eq(0);
+            var secbtn = buttons.eq(1);
+            var thibtn = buttons.eq(2);
+            var forbtn = buttons.eq(3);
+
+            var imgs = $('#imgbox').find('img');
+            var firimg = imgs.eq(0);
+            var secimg = imgs.eq(1);
+            var thiimg = imgs.eq(2);
+            var forimg = imgs.eq(3);
+            
+            firbtn.click(function(){
+                imgs.hide();
+                firimg.fadeIn();
+                $('div#firtext').html(
+                'CONCEPT 1<br>\
+                <br>신발이 짝짝이인 건 컨셉입니다\
+                <br>신발이 짝짝이인 건 귀여워요\
+                <br>신발이 짝짝이인 건..'
+                );
+            });
+            secbtn.click(function(){
+                imgs.hide();
+                secimg.fadeIn();
+                $('div#firtext').html(
+                'CONCEPT 2<br>\
+                <br>신발이 짝짝이인 건 컨셉입니다\
+                <br>신발이 짝짝이인 건 귀여워요\
+                <br>신발이 짝짝이인 건..'
+                );
+            });
+            thibtn.click(function(){
+                imgs.hide();
+                thiimg.fadeIn();
+                $('div#firtext').html(
+                'CONCEPT 3<br>\
+                <br>신발이 짝짝이인 건 컨셉입니다\
+                <br>신발이 짝짝이인 건 귀여워요\
+                <br>신발이 짝짝이인 건..'
+                );
+            });
+            forbtn.click(function(){
+                imgs.hide();
+                forimg.fadeIn();
+                $('div#firtext').html(
+                'CONCEPT 4<br>\
+                <br>신발이 짝짝이인 건 컨셉입니다\
+                <br>신발이 짝짝이인 건 귀여워요\
+                <br>신발이 짝짝이인 건..'
+                );
+            });
+        })
+    </script>
+</head>
+<body>
+    <div id="wrap">
+    <div id="main">
+        <div class="guide">
+            <div class="리"><a href="index.html">离</a></div>
+            <a href="story.html" class="tap">Story</a>
+            <a href="concept.html" class="tap">Concept</a>
+            <a href="behind.html" class="tap">Behind</a>
+            <a href="connection.html" class="tap">Connection</a>
+        </div>
+        <div class="set" id="first">
+            <div class="text" id="firtext">
+                CONCEPT 1<br>
+                <br>신발이 짝짝이인 건 컨셉입니다
+                <br>신발이 짝짝이인 건 귀여워요
+                <br>신발이 짝짝이인 건..
+            </div>
+            <div id="buttons">
+                <button class="concept">CONCEPT 1</button>
+                <button class="concept">CONCEPT 2</button>
+                <button class="concept">CONCEPT 3</button>
+                <button class="concept">CONCEPT 4</button>
+            </div>
+        </div>
+        <div class="set" id="second">
+            <div class="pic" id="imgbox">
+                <img src="pic/1699407927200.jpg">
+                <img src="pic/1699407926844.jpg" class="turnoff">
+                <img src="pic/1699407927200.jpg" class="turnoff">
+                <img src="pic/1699407926844.jpg" class="turnoff">
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
