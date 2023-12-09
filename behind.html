@@ -148,6 +148,7 @@
             $('<img>').attr('src', 'pic/비하인드/14.jpg');
             $('<img>').attr('src', 'pic/비하인드/15.jpg');
 
+        $('<img>').attr('src', 'pic/비하인드/1.jpg').on('load', function(){
             $('.버튼#left').click(function(){
                 var imgs = box.find('img')
                 var first = imgs.eq(0);
@@ -162,6 +163,7 @@
                 first.fadeOut().appendTo(box);
                 second.fadeIn();
             });
+        });
         })
     </script>
 </head>
