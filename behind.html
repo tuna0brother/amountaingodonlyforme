@@ -148,7 +148,10 @@
             $('<img>').attr('src', 'pic/비하인드/14.jpg');
             $('<img>').attr('src', 'pic/비하인드/15.jpg');
 
-        $('<img>').attr('src', 'pic/비하인드/1.jpg').on('load', function(){
+        for (var i = 1; i <= 15; i++) {
+        var img = $('<img>').attr('src', 'pic/비하인드/' + i + '.jpg').appendTo(box);
+        img.on('load', function() {
+
             $('.버튼#left').click(function(){
                 var imgs = box.find('img')
                 var first = imgs.eq(0);
@@ -164,7 +167,9 @@
                 second.fadeIn();
             });
         });
-        })
+        };
+    })
+
     </script>
 </head>
 
