@@ -31,7 +31,7 @@
             background-size: cover;            
         }
         #main {
-            width: 95vw;
+            width: 100vw;
             height: 56vw;
             display: flex;
             position: relative;
@@ -59,6 +59,8 @@
             position: absolute;
             top: 2.5vw;
             right: 2.5vw;
+
+            z-index: 1;
         }
         .tap {
             display: block;
@@ -92,8 +94,16 @@
         }
         .text {
             width: 100%;
-            font-size: 2.2rem;
+            height: 20vw;
+
+            font-size: 1.8rem;
             text-align: center;
+            line-height: 2vw;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             margin-top: 2.5vw;
             margin-bottom: 2.5vw;
         }
@@ -107,7 +117,7 @@
             height: 10vw;
             border: 0px;
             border-radius:0.5rem 3rem 0.5rem 0.5rem;
-            background-color: rgba(255,255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.3);
             
             font-size: 1.5rem;
             color: rgba(0, 0, 0, 0.5);
@@ -156,44 +166,45 @@
             var thiimg = imgs.eq(2);
             var forimg = imgs.eq(3);
             
+            buttons.each(function(){
+                buttons.hover(
+                    function(){$(this).css('background-color','rgb(200, 200, 200)')},
+                    function(){$(this).css('background-color','rgba(255, 255, 255, 0.3)')})
+            })
             firbtn.click(function(){
                 imgs.hide();
                 firimg.fadeIn();
                 $('div#firtext').html(
-                'CONCEPT 1<br>\
-                <br>신발이 짝짝이인 건 컨셉입니다\
-                <br>신발이 짝짝이인 건 귀여워요\
-                <br>신발이 짝짝이인 건..'
+                    "붉은 실은 '홍연' 즉, 인연을 나타낸다.\
+                    <br>이는 예로부터 많은 곳에서 등장하였는데, 당나라 속현괴록에서 가장 처음 등장한다.\
+                    <br><br>'붉은 실'은 운명으로 이어진 인연, 결국에는 이어질 수밖에 없는 운명을 뜻한다.\
+                    <br>그러한 홍실이 어머니라는 외부존재로 인해 끊어졌으니,\
+                    <br>그들의 인연은 끊어질 수 밖에 없음을 뜻한다."
                 );
             });
             secbtn.click(function(){
                 imgs.hide();
                 secimg.fadeIn();
                 $('div#firtext').html(
-                'CONCEPT 2<br>\
-                <br>신발이 짝짝이인 건 컨셉입니다\
-                <br>신발이 짝짝이인 건 귀여워요\
-                <br>신발이 짝짝이인 건..'
+                    "소녀가 도깨비라는 결정적 증거가 된다.\
+                    <br>도깨비는 예로부터 인간들 주변에서 장난치기를 좋아했고, 인간들의 물건을 탐내기도 하였다.\
+                    <br>신발을 한쪽씩 신고 있는 것은 그녀가 도깨비라는 것을 암시해주고 있다.\
+                    <br>또한 소녀가 먹고 있던 음식은 도깨비에게 음식을 줌으로써 제사를 지냈다는 의미를 나타낸다."
                 );
             });
             thibtn.click(function(){
                 imgs.hide();
                 thiimg.fadeIn();
                 $('div#firtext').html(
-                'CONCEPT 3<br>\
-                <br>신발이 짝짝이인 건 컨셉입니다\
-                <br>신발이 짝짝이인 건 귀여워요\
-                <br>신발이 짝짝이인 건..'
+                "가정집으로 보이는 집에 붙어있는 부적들과 방울들로 인해\
+                <br>'무당집'이라는 것을 보여준다."
                 );
             });
             forbtn.click(function(){
                 imgs.hide();
                 forimg.fadeIn();
                 $('div#firtext').html(
-                'CONCEPT 4<br>\
-                <br>신발이 짝짝이인 건 컨셉입니다\
-                <br>신발이 짝짝이인 건 귀여워요\
-                <br>신발이 짝짝이인 건..'
+                "붕대들로 인해 원래부터 많이 다치고, 가정과 학교에서 소속되지 못함을 보여준다."
                 );
             });
         })
@@ -211,10 +222,11 @@
         </div>
         <div class="set" id="first">
             <div class="text" id="firtext">
-                CONCEPT 1<br>
-                <br>신발이 짝짝이인 건 컨셉입니다
-                <br>신발이 짝짝이인 건 귀여워요
-                <br>신발이 짝짝이인 건..
+                붉은 실은 '홍연' 즉, 인연을 나타낸다.
+                <br>이는 예로부터 많은 곳에서 등장하였는데, 당나라 속현괴록에서 가장 처음 등장한다.
+                <br><br>'붉은 실'은 운명으로 이어진 인연, 결국에는 이어질 수밖에 없는 운명을 뜻한다.
+                <br>그러한 홍실이 어머니라는 외부존재로 인해 끊어졌으니,
+                <br>그들의 인연은 끊어질 수 밖에 없음을 뜻한다.
             </div>
             <div id="buttons">
                 <button class="concept">CONCEPT 1</button>
@@ -225,10 +237,10 @@
         </div>
         <div class="set" id="second">
             <div class="pic" id="imgbox">
-                <img src="pic/1699407927200.jpg">
-                <img src="pic/1699407926844.jpg" class="turnoff">
+                <img src="pic/1699407926844.jpg">
                 <img src="pic/1699407927200.jpg" class="turnoff">
-                <img src="pic/1699407926844.jpg" class="turnoff">
+                <img src="pic/부적cut.png" class="turnoff">
+                <img src="pic/붕대cut.png" class="turnoff">
             </div>
         </div>
     </div>

@@ -22,8 +22,8 @@
         #main {
             height: 100vh;
             display: flex;
-            position: relative;
             justify-content: space-between;
+            align-items: center;;
 
             background-image: url("pic/book.jpg");
             background-position: center;
@@ -51,6 +51,8 @@
             position: absolute;
             top: 2.5vw;
             right: 2.5vw;
+
+            z-index: 1;
         }
         .tap {
             display: block;
@@ -66,25 +68,38 @@
         }
 
         .pic {
-            width: 49vw;
+            width: 50vw;
         }
         img {
             width: 100%;
         }
+        #right {
+            width: 50vw;
+            height: 56vw;
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;            
+        }
         .text {
-            width: 49vw;
-            height: 73.5vw;
+            margin-top: 18vw;
 
             text-align: center;
             line-height: 2;
             font-size: 2rem;
 
+            font-weight: bolder;
+        }
+        .link {
+            margin-top: 13vw;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         .icon {
-            width: 6vw;
+            width: 4vw;
         }
 
         @media (max-width: 768px) {
@@ -100,20 +115,32 @@
     </style>
 </head>
 <body>
+    <div id="wrap">
     <div id="main">
-        <div class="guide">
-            <div class="리"><a href="index.html">离</a></div>
-            <a href="story.html" class="tap">Story</a>
-            <a href="concept.html" class="tap">Concept</a>
-            <a href="behind.html" class="tap">Behind</a>
-            <a href="connection.html" class="tap">Connection</a>
-        </div>
         <div class="pic"><img src="pic/1699407926844.jpg"></div>
+
+        <div id="right">
+            <div class="guide">
+                <div class="리"><a href="index.html">离</a></div>
+                <a href="story.html" class="tap">Story</a>
+                <a href="concept.html" class="tap">Concept</a>
+                <a href="behind.html" class="tap">Behind</a>
+                <a href="connection.html" class="tap">Connection</a>
+            </div>
         <div class="text">
-            <a href=""><img src="pic/youtube.png" class="icon"></a>
-            <div style="width: 3vw;"></div>
-            <a href=""><img src="pic/poster.png" class="icon"></a>
+            누군가 물어보더라.
+            <br>감독이 생각하기에 소녀는 어떤 존재이냐고.
+            <br><br>소녀는 도깨비여야만 한다.
+            <br>모두가 그것은 위험하다 외치지만
+            <br>그렇게 외치는 사람들이 소년에게는 도깨비로 보였을 터.
+            <br>
+            <br>소녀는, 소년에게만은 가장 소중하고 특별한 산신이었을 것이다.
         </div>
+        <div class="link">
+            <a href=""><img src="pic/youtube.png" class="icon"></a>
+        </div>
+        </div>
+    </div>
     </div>
 </body>
 </html>

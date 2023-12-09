@@ -17,17 +17,26 @@
         body {
             margin: 0px;
         }
-        #main {
+        #wrap {
+            overflow: hidden;
+
             width: 100vw;
             height: 100vh;
             display: flex;
-            position: relative;
-            justify-content: center;
-
+            align-items: center;
+            
             background-image: url("pic/book.jpg");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+        }
+        #main {
+            width: 100%;
+            height: 56vw;
+
+            display: flex;
+            position: relative;
+            justify-content: center;            
         }
 
         @font-face {
@@ -50,6 +59,8 @@
             position: absolute;
             top: 2.5vw;
             right: 2.5vw;
+
+            z-index: 1;
         }
         .tap {
             display: block;
@@ -66,7 +77,6 @@
 
 
         #틀 {
-            margin: 7.5vw 0vw;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -74,15 +84,19 @@
         .pic {
             margin: 0vw 1.75vw;
             width: 70vw;
-            height: 40vw;
+            height: 80vw;
             position: relative;
+            
+            display: flex;
+            align-items: center;
         }
         div#fir img {
             width: 100%;
             
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         div#fir img.alt{
             display: none;
@@ -118,13 +132,12 @@
     <script>
         $('#틀').ready(function(){
             var box = $('div#fir');
-            $('<img>').attr('src', 'pic/1699407927142.jpg');
-            $('<img>').attr('src', 'pic/1699407927576.jpg');
+            $('<img>').attr('src', 'pic/비하인드/.jpg');
 
             $('.버튼#left').click(function(){
                 var imgs = box.find('img')
                 var first = imgs.eq(0);
-                var last = imgs.eq(2);
+                var last = imgs.eq(14);
                 first.fadeOut();
                 last.prependTo(box).fadeIn();
             });
@@ -140,6 +153,7 @@
 </head>
 
 <body>
+    <div id="wrap">
     <div id="main">
         <div class="guide">
             <div class="리"><a href="index.html">离</a></div>
@@ -151,12 +165,25 @@
         <div id="틀">
             <button class='버튼' id="left"><img src="pic/left.png"></button>
             <div class="pic" id="fir">
-                <img src="pic/1699407927033.jpg">
-                <img src="pic/1699407927142.jpg" class="alt">
-                <img src="pic/1699407927576.jpg" class="alt">
+                <img src="pic/비하인드/1.jpg">
+                <img src="pic/비하인드/2.jpg" class="alt">
+                <img src="pic/비하인드/3.jpg" class="alt">
+                <img src="pic/비하인드/4.jpg" class="alt">
+                <img src="pic/비하인드/5.jpg" class="alt">
+                <img src="pic/비하인드/6.jpg" class="alt">
+                <img src="pic/비하인드/7.jpg" class="alt">
+                <img src="pic/비하인드/8.jpg" class="alt">
+                <img src="pic/비하인드/9.jpg" class="alt">
+                <img src="pic/비하인드/10.jpg" class="alt">
+                <img src="pic/비하인드/11.jpg" class="alt">
+                <img src="pic/비하인드/12.jpg" class="alt">
+                <img src="pic/비하인드/13.jpg" class="alt">
+                <img src="pic/비하인드/14.jpg" class="alt">
+                <img src="pic/비하인드/15.jpg" class="alt">
             </div>
             <button class='버튼' id="right"><img src="pic/right.png"></button>
         </div>
+    </div>
     </div>
 </body>
 </html>
